@@ -6,7 +6,7 @@ import Header from './header';
 function App() {
 	return (
 		<div className="App">
-			<Header />
+			<Header text="Hi React!" name="Boro"/>
 			<Footer />
 		</div>
 	);
