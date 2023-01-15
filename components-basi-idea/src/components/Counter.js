@@ -11,12 +11,16 @@ export const Counter = (props) => {
 		setCount((oldCount) => oldCount - 1);
 	};
 
+	const clearHandler = () => {
+		setCount((oldCount) => 0);
+	};
 	return (
 		<div>
 			<h1>Counter</h1>
 			<h2>{count}</h2>
 			<button onClick={increaseHandler}>+</button>
 			<button onClick={decreaseHandler}>-</button>
+			<button onClick={clearHandler}>Clear</button>
 		</div>
 	);
 };
