@@ -12,15 +12,30 @@ export const Counter = (props) => {
 	};
 
 	const clearHandler = () => {
-		setCount((oldCount) => 0);
+		setCount(0);
 	};
+
+	let title = '';
+
+	if (count < 10) {
+		title = 'Counter';
+	} else if (count < 20) {
+		title = 'Turbo Counter';
+	} else if (count < 30) {
+		title = 'Mega Counter';
+	} else if (count < 40) {
+		title = 'Giga Counter';
+	} else {
+		title = 'Giga Chad';
+	}
+
 	return (
 		<div>
-			<h1>Counter</h1>
+			<h1 style={{ fontSize: 16 + count + 'px' }}>{title}</h1>
 			<h2>{count}</h2>
 			<button onClick={increaseHandler}>+</button>
-			<button onClick={decreaseHandler}>-</button>
 			<button onClick={clearHandler}>Clear</button>
+			<button onClick={decreaseHandler}>-</button>
 		</div>
 	);
 };
